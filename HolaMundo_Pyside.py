@@ -17,5 +17,5 @@ ventana.setWindowTitle('Hola mundo con PySide')
 ventana.resize(600, 400)
 #mostrar la ventana
 ventana.show()
-#Se ejecuta la aplicacion 
+# Se ejecuta la aplicacion    @recommended:languages
 sys.exit(app.exec())
