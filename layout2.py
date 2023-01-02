@@ -21,14 +21,27 @@ class VentanaPrincipal(QMainWindow):
         #layout vertical
         #layout horizontal
         #layout = QVBoxLayout()
-        layout = QHBoxLayout()
+        #layout = QHBoxLayout()
+        #anidar layout Horizontal y vertical 
+        layout_horizontal =QHBoxLayout()
+        layout_vertical= QVBoxLayout()
+        #agregamos widget al layout vertical
+
+
         #Agregar un nuevo componente 
-        layout.addWidget(Color('red'))
-        layout.addWidget(Color('green'))
-        layout.addWidget(Color('blue'))
+        layout_vertical.addWidget(Color('red'))
+        layout_vertical.addWidget(Color('green'))
+        layout_vertical.addWidget(Color('blue'))
+
+        #agregar el layout veical dentro  del horizontal de maneda anidada
+        layout_horizontal.addLayout(layout_vertical)
+        #se agrega al layout
+        layout_horizontal.addWidget(Color('yellow'))
+        layout_horizontal.addWidget(Color('purple'))
         #crear un componente generico para poder publicar layou 
         componente = QWidget()
-        componente.setLayout(layout)
+        componente.setLayout(layout_horizontal)
+
 
         self.setCentralWidget(componente)
 
