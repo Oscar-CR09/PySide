@@ -28,10 +28,10 @@ class Componentes(QMainWindow):
         print(f'NUeva pocision {nueva_pocision}')
 
     def slider_precionado(self):
-        print('Slider precionado')
+        print('Dial precionado')
 
     def slider_liberado(self):
-        print('Slider Liberado')
+        print('QDial Liberado')
 
 
 if __name__ == '__main__':
