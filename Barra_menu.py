@@ -56,7 +56,37 @@ class VentanaPrincipal(QMainWindow):
         menu_archivo = menu.addMenu('&Archivo')
         menu_archivo.addAction(boton_nuevo)
 
-        
+        #se agrega segunda opcion
+        menu_archivo.addAction(boton_guardar)
+
+        #se agraga un separador
+        menu_archivo.addSeparator()
+
+        boton_salir = QAction('Salir',self)
+        menu_archivo.addAction(boton_salir)
+
+        #submenu menuayuda
+        boton_acerca_de = QAction(QIcon('acerca.png'), 'Acerca De', self)
+        menu_ayuda = menu.addMenu('Ayuda')
+        menu_ayuda.addAction(boton_acerca_de)
+
+        boton_acerca_de.triggered.connect(self.click_boton_acerca_de)
+
+        #se agraga un submenu 
+        menu_archivo.addMenu(menu_ayuda)
+
+        #creacion de atajos para el menu
+        #ejemplo combinacion de teclado 
+        #boton_nuevo.setShortcut(QKeySequence('Ctrl+n'))
+        boton_nuevo.setShortcut(Qt.CTRL + Qt.Key_N)
+        #atajo de acerca de control + 1
+        boton_acerca_de.setShortcut(Qt.CTRL + Qt.Key_1)
+        #atajo de guardar control + g
+        boton_guardar.setShortcut(Qt.CTRL + Qt.Key_G)
+
+
+    def click_boton_acerca_de(self,s):
+        print(f'Acerca de... {s}')
 
     def click_boton_nuevo(self,s):
         print(f'NUevo Archivo click {s}')
