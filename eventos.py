@@ -34,7 +34,6 @@ class VentanaPrincipal(QMainWindow):
             self.etiqueta.setText('mousePressEvent Boton Derecho')
 
 
-
     def mouseReleaseEvent(self, event):
         #self.etiqueta.setText('Evento mouseReleaseEvent detectado')
         if event.button() == Qt.LeftButton:
